@@ -1,0 +1,26 @@
+# BasicLobbyistFlow
+
+main: kit: flow: BasicLobbyistFlow:
+{
+  entity: "lobbyist",
+  kind: "basic",
+  name: "BasicLobbyistFlow",
+  step: [
+    {
+      m: {
+        chamber: "chamber01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "lobbyist_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLobbyistFlow"
+}

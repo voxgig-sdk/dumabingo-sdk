@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "lobby_group": {
+      "LOBBY_GROUP00": {
+        "id": "LOBBY_GROUP00",
+        "level": 101,
+        "lft": 102,
+        "name": "s67",
+        "office": 104,
+        "order": 105,
+        "parent": 106,
+        "region": 107,
+        "rght": 108,
+        "tree_id": "TREE01"
+      },
+      "LOBBY_GROUP01": {
+        "id": "LOBBY_GROUP01",
+        "level": 201,
+        "lft": 202,
+        "name": "scb",
+        "office": 204,
+        "order": 205,
+        "parent": 206,
+        "region": 207,
+        "rght": 208,
+        "tree_id": "TREE01"
+      },
+      "LOBBY_GROUP02": {
+        "id": "LOBBY_GROUP02",
+        "level": 301,
+        "lft": 302,
+        "name": "s12f",
+        "office": 304,
+        "order": 305,
+        "parent": 306,
+        "region": 307,
+        "rght": 308,
+        "tree_id": "TREE01"
+      }
+    }
+  },
+  "new": {
+    "lobby_group": {
+      "lobby_group_ref01": {
+        "level": 401,
+        "lft": 402,
+        "name": "s193",
+        "office": 404,
+        "order": 405,
+        "parent": 406,
+        "region": 407,
+        "rght": 408,
+        "tree_id": "TREE01"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/lobby_group/": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,1619 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "DumaBingo API (Declarator)",
+    "version": "1.0.0",
+    "description": "Unofficial: the Declarator (api.deklarator.org) endpoints behind dumabingo.org, an interactive map of the lobbying ties of Russian State Duma deputies and Federation Council senators: deputies, lobby groups, bills, bill success rates and officials' asset declarations. Not documented. Endpoint list from the Swift client https://github.com/l0v3m0n3y/dumabingo (src/dumabingo.swift), plus GET /api/lobbist/{id}/ (senator profiles) and the d7/d8/sf dump names, both taken from the dumabingo.org front-end bundle. Every schema was taken from live GET probes on 2026-10-23 (no key). The client's two other calls live on another host (https://dumabingo.org/assets/data/rating.json and alias.json, both static JSON) and are not modelled. Text is Russian; bio/conclusion/relations/submitted are HTML. NOTE: searchSections returns officials' published anti-corruption asset declarations, including the income, property and vehicles of spouses and children. Unverified: fields that were null or empty in every probe (marked in their descriptions), pagination parameters of searchSections, and whether format=json is required (it was always sent).",
+    "contact": {
+      "name": "l0v3m0n3y/dumabingo",
+      "url": "https://github.com/l0v3m0n3y/dumabingo"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.deklarator.org",
+      "description": "Declarator API"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Lobbyist"
+    },
+    {
+      "name": "Person"
+    },
+    {
+      "name": "Law"
+    }
+  ],
+  "paths": {
+    "/media/dumps/lobbist-small-{chamber}.json": {
+      "get": {
+        "summary": "List deputies or senators with lobbying data",
+        "description": "Static dump used by dumabingo.org: d8 = State Duma 8th convocation (469 records, about 9.5 MB), d7 = 7th convocation (433 records, about 2.9 MB), sf = Federation Council (191 records). Other values (e.g. gd) are 404.",
+        "operationId": "listLobbyists",
+        "tags": [
+          "Lobbyist"
+        ],
+        "parameters": [
+          {
+            "name": "chamber",
+            "in": "path",
+            "required": true,
+            "description": "Dump id.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "d7",
+                "d8",
+                "sf"
+              ]
+            },
+            "example": "sf"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Lobbyist"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lobby_group/": {
+      "get": {
+        "summary": "List lobby groups",
+        "description": "The full lobby-group tree as a flat array (no pagination).",
+        "operationId": "listLobbyGroups",
+        "tags": [
+          "Lobbyist"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LobbyGroup"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lobbist_detail/{id}/": {
+      "get": {
+        "summary": "Get a State Duma deputy profile",
+        "description": "Profile with HTML bio, conclusion and relations texts. id is Lobbyist.id from a Duma dump (d7/d8); a senator id answers 404 {\"detail\": ...}.",
+        "operationId": "getDeputyProfile",
+        "tags": [
+          "Lobbyist"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 4489
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeputyProfile"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lobbist/{id}/": {
+      "get": {
+        "summary": "Get a Federation Council senator profile",
+        "description": "Profile with HTML bio, conclusion and relations texts. id is Lobbyist.id from the sf dump. Found in the dumabingo.org front-end, not in the Swift client.",
+        "operationId": "getSenatorProfile",
+        "tags": [
+          "Lobbyist"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 10514
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SenatorProfile"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/convocations/{convocationId}/person_convocations": {
+      "get": {
+        "summary": "List the persons of a Duma convocation",
+        "operationId": "listConvocationPersons",
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "convocationId",
+            "in": "path",
+            "required": true,
+            "description": "Convocation number (dumabingo.org uses 7 and 8).",
+            "schema": {
+              "type": "integer"
+            },
+            "example": 8
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "description": "Django REST Framework renderer; json returns JSON.",
+            "schema": {
+              "type": "string",
+              "default": "json"
+            },
+            "example": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "persons": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PersonConvocation"
+                      }
+                    }
+                  },
+                  "required": [
+                    "persons"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/persons/{personId}/success_rate": {
+      "get": {
+        "summary": "Get a person's bill success rate",
+        "description": "How many bills the person proposed and how many passed, per convocation.",
+        "operationId": "getSuccessRate",
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "description": "Declarator person id (Lobbyist.person).",
+            "schema": {
+              "type": "integer"
+            },
+            "example": 31850
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "description": "Django REST Framework renderer; json returns JSON.",
+            "schema": {
+              "type": "string",
+              "default": "json"
+            },
+            "example": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessRate"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/search/sections/": {
+      "get": {
+        "summary": "Search a person's asset declarations",
+        "description": "Annual income, real estate and vehicle declarations of an official (and of their spouse/children, marked by relative). Paginated Django REST envelope; only the first page was probed.",
+        "operationId": "searchSections",
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "person",
+            "in": "query",
+            "required": true,
+            "description": "Declarator person id (Lobbyist.person).",
+            "schema": {
+              "type": "integer"
+            },
+            "example": 57270
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "URL of the next page, or null."
+                    },
+                    "previous": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "URL of the previous page, or null."
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Section"
+                      }
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "next",
+                    "previous",
+                    "results"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/law_draft_api/{id}/": {
+      "get": {
+        "summary": "Get a bill",
+        "description": "A State Duma bill with Declarator analysis (core, possible_interested_persons) and author ids.",
+        "operationId": "getLawDraft",
+        "tags": [
+          "Law"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Declarator bill id (LawDraftRef.id).",
+            "schema": {
+              "type": "integer"
+            },
+            "example": 391
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LawDraft"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Lobbyist": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Lobbyist record id: the {id} of getDeputyProfile (Duma) or getSenatorProfile (Federation Council)."
+          },
+          "person": {
+            "type": "integer",
+            "description": "Declarator person id: use with searchSections and getSuccessRate."
+          },
+          "fullname": {
+            "type": "string",
+            "example": "Строкова Елена Викторовна"
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true,
+            "example": "F"
+          },
+          "rupep": {
+            "type": "string",
+            "nullable": true,
+            "example": "3193"
+          },
+          "site": {
+            "type": "string",
+            "description": "Chamber: 'D' (State Duma) or 'S' (Federation Council).",
+            "example": "D"
+          },
+          "committee": {
+            "type": "string",
+            "nullable": true,
+            "example": "Член Комитета ГД по международным делам"
+          },
+          "birth_date": {
+            "type": "string",
+            "nullable": true,
+            "example": "1976-02-17"
+          },
+          "goverment_body": {
+            "type": "string",
+            "nullable": true,
+            "example": "исполнительный орган власти"
+          },
+          "terms_number": {
+            "type": "integer",
+            "nullable": true
+          },
+          "total_years": {
+            "type": "number",
+            "nullable": true
+          },
+          "start_year": {
+            "type": "integer",
+            "nullable": true
+          },
+          "commission": {
+            "type": "string",
+            "nullable": true,
+            "example": ""
+          },
+          "temp_commission": {
+            "type": "string",
+            "nullable": true,
+            "example": ""
+          },
+          "convocations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Roman numeral, e.g. VIII.",
+              "example": "VIII"
+            }
+          },
+          "committees": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Комитет ГД по международным делам"
+            }
+          },
+          "region": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Region"
+              }
+            ],
+            "nullable": true
+          },
+          "law_draft_apis": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LawDraftRef"
+            }
+          },
+          "fraction_old": {
+            "type": "string",
+            "nullable": true,
+            "example": "ЛДПР"
+          },
+          "fraction_start_date": {
+            "type": "string",
+            "nullable": true,
+            "example": "2016-10-05"
+          },
+          "fraction_end_date": {
+            "type": "string",
+            "nullable": true,
+            "example": "2021-10-11"
+          },
+          "fraction_group": {
+            "type": "string",
+            "nullable": true,
+            "example": "Группа Шхагошева А.Л."
+          },
+          "election_method": {
+            "type": "string",
+            "nullable": true,
+            "example": "партийный список"
+          },
+          "last_appointment": {
+            "type": "string",
+            "nullable": true,
+            "example": "2017-09-26"
+          },
+          "end_date": {
+            "type": "string",
+            "nullable": true,
+            "example": "2024-06-01",
+            "description": "Free text in the sf dump (e.g. 'сентябрь 2022'), YYYY-MM-DD in the Duma dumps."
+          },
+          "law_draft_count": {
+            "type": "integer"
+          },
+          "draft": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "modified_when": {
+            "type": "string",
+            "nullable": true,
+            "example": "2025-09-01"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "lobbist": {
+            "type": "integer"
+          },
+          "convocation": {
+            "type": "integer"
+          },
+          "fraction": {
+            "description": "Faction: an integer faction id in the Duma dumps (d7, d8), the faction NAME as a string in the Federation Council dump (sf); null when unknown.",
+            "nullable": true,
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "positions": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Lobby group ids (listLobbyGroups)."
+          }
+        },
+        "required": [
+          "id",
+          "person",
+          "fullname",
+          "gender",
+          "site",
+          "committee",
+          "birth_date",
+          "goverment_body",
+          "terms_number",
+          "total_years",
+          "start_year",
+          "commission",
+          "temp_commission",
+          "convocations",
+          "committees",
+          "region",
+          "election_method",
+          "last_appointment",
+          "end_date",
+          "hidden",
+          "groups"
+        ],
+        "description": "A deputy (State Duma) or senator (Federation Council) from the Declarator lobbying dumps. The Duma dumps carry extra fields (convocation, fraction_*, law_draft_apis, lobbist, positions, rupep...) that the sf dump lacks."
+      },
+      "Region": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string",
+            "example": "Москва"
+          },
+          "short_name": {
+            "type": "string",
+            "example": "Москва"
+          },
+          "genitive": {
+            "type": "string",
+            "example": "города Москвы"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "short_name",
+          "genitive"
+        ]
+      },
+      "LawDraftRef": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string",
+            "example": "1179398-7"
+          },
+          "link": {
+            "type": "string",
+            "example": "https://sozd.duma.gov.ru/bill/1179398-7"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "number",
+          "link"
+        ]
+      },
+      "LobbyGroup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "level": {
+            "type": "integer"
+          },
+          "lft": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string",
+            "example": "Группа интересов силовых структур"
+          },
+          "office": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          },
+          "order": {
+            "type": "integer"
+          },
+          "parent": {
+            "type": "integer",
+            "nullable": true
+          },
+          "region": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          },
+          "rght": {
+            "type": "integer"
+          },
+          "tree_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "level",
+          "lft",
+          "name",
+          "office",
+          "order",
+          "parent",
+          "region",
+          "rght",
+          "tree_id"
+        ],
+        "description": "A node in the lobby-group tree (nested-set fields lft/rght/level/tree_id)."
+      },
+      "PersonConvocation": {
+        "type": "object",
+        "properties": {
+          "person_id": {
+            "type": "integer"
+          },
+          "convocations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "VIII"
+            }
+          }
+        },
+        "required": [
+          "person_id",
+          "convocations"
+        ]
+      },
+      "DeputyProfile": {
+        "type": "object",
+        "properties": {
+          "appointing_date": {
+            "type": "string",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          },
+          "bio": {
+            "type": "string",
+            "nullable": true
+          },
+          "birth_date": {
+            "type": "string",
+            "example": "1980-08-09",
+            "nullable": true
+          },
+          "comments": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "commission": {
+            "type": "string",
+            "nullable": true,
+            "example": ""
+          },
+          "committee": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "committees": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Комитет ГД по туризму и развитию туристической инфраструктуры"
+            }
+          },
+          "conclusion": {
+            "type": "string",
+            "nullable": true
+          },
+          "convocation": {
+            "type": "integer"
+          },
+          "draft": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "duma_id": {
+            "type": "integer"
+          },
+          "edited": {
+            "type": "boolean"
+          },
+          "election_method": {
+            "type": "string",
+            "example": "партийный список",
+            "nullable": true
+          },
+          "end_date": {
+            "type": "string",
+            "nullable": true,
+            "example": "2024-06-01",
+            "description": "Free text in the sf dump (e.g. 'сентябрь 2022'), YYYY-MM-DD in the Duma dumps."
+          },
+          "end_date_old": {
+            "type": "string",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          },
+          "fact_checked": {
+            "type": "boolean"
+          },
+          "family": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "fraction": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Faction id."
+          },
+          "fraction_end_date": {
+            "type": "string",
+            "example": "2026-12-20",
+            "nullable": true
+          },
+          "fraction_group": {
+            "type": "string",
+            "nullable": true,
+            "example": "Группа Шхагошева А.Л."
+          },
+          "fraction_old": {
+            "type": "string",
+            "nullable": true,
+            "example": "ЛДПР"
+          },
+          "fraction_start_date": {
+            "type": "string",
+            "example": "2021-10-12",
+            "nullable": true
+          },
+          "fullname": {
+            "type": "string",
+            "example": "Костенко Наталья Васильевна"
+          },
+          "gender": {
+            "type": "string",
+            "example": "F",
+            "nullable": true
+          },
+          "goverment_body": {
+            "type": "string",
+            "nullable": true,
+            "example": "исполнительный орган власти"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "last_appointment": {
+            "type": "string",
+            "nullable": true,
+            "example": "2017-09-26"
+          },
+          "last_import": {
+            "type": "string",
+            "example": "2019-01-23T20:31:26.366445",
+            "nullable": true
+          },
+          "law_draft_count": {
+            "type": "integer"
+          },
+          "lawyer_checked": {
+            "type": "boolean"
+          },
+          "lobbist": {
+            "type": "integer"
+          },
+          "modified_when": {
+            "type": "string",
+            "example": "2025-09-01",
+            "nullable": true
+          },
+          "office": {
+            "type": "string",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          },
+          "person": {
+            "type": "integer"
+          },
+          "photo": {
+            "type": "string",
+            "example": "lobbist/Костенко_Наталья_Васильевна.jpg",
+            "nullable": true
+          },
+          "positions": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "raw_position": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "region": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Region"
+              }
+            ],
+            "nullable": true
+          },
+          "relations": {
+            "type": "string",
+            "nullable": true
+          },
+          "site": {
+            "type": "string",
+            "example": "D"
+          },
+          "start_year": {
+            "type": "integer",
+            "nullable": true
+          },
+          "submitted": {
+            "type": "string",
+            "nullable": true
+          },
+          "temp_commission": {
+            "type": "string",
+            "nullable": true,
+            "example": ""
+          },
+          "terms_number": {
+            "type": "integer",
+            "nullable": true
+          },
+          "total_years": {
+            "type": "number",
+            "nullable": true
+          },
+          "vote_link": {
+            "type": "string",
+            "example": "http://vote.duma.gov.ru/?convocation=AAAAAAA7&deputy=99112787&sort=date_desc",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "person",
+          "fullname"
+        ],
+        "description": "A State Duma deputy profile. Built from one probed record: only id, person and fullname are marked required."
+      },
+      "SenatorProfile": {
+        "type": "object",
+        "properties": {
+          "bio": {
+            "type": "string",
+            "nullable": true
+          },
+          "birth_date": {
+            "type": "string",
+            "example": "1958-05-17",
+            "nullable": true
+          },
+          "comments": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "commission": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "committee": {
+            "type": "string",
+            "example": "Комитет по обороне и безопасности",
+            "nullable": true
+          },
+          "committees": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in the probe; item type unverified."
+          },
+          "conclusion": {
+            "type": "string",
+            "nullable": true
+          },
+          "convocations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "I"
+            }
+          },
+          "duma_id": {
+            "type": "integer",
+            "nullable": true,
+            "description": "State Duma id; null for senators in the probe (an integer in Duma profiles)."
+          },
+          "edited": {
+            "type": "boolean"
+          },
+          "election_method": {
+            "type": "string",
+            "nullable": true,
+            "example": "партийный список"
+          },
+          "end_date": {
+            "type": "string",
+            "example": "сентябрь 2022",
+            "nullable": true
+          },
+          "family": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "fraction": {
+            "type": "string",
+            "nullable": true,
+            "description": "Faction name."
+          },
+          "fraction_group": {
+            "type": "string",
+            "nullable": true,
+            "example": "Группа Шхагошева А.Л."
+          },
+          "fullname": {
+            "type": "string",
+            "example": "Ракитин Александр Васильевич"
+          },
+          "gender": {
+            "type": "string",
+            "example": "M",
+            "nullable": true
+          },
+          "goverment_body": {
+            "type": "string",
+            "example": "исполнительный орган власти",
+            "nullable": true
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "last_appointment": {
+            "type": "string",
+            "example": "2017-09-26",
+            "nullable": true
+          },
+          "last_import": {
+            "type": "string",
+            "example": "2020-05-24T16:48:00.133790",
+            "nullable": true
+          },
+          "person": {
+            "type": "integer"
+          },
+          "photo": {
+            "type": "string",
+            "nullable": true
+          },
+          "position": {
+            "type": "string",
+            "example": "Первый заместитель председателя Комитета",
+            "nullable": true
+          },
+          "region": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Region"
+              }
+            ],
+            "nullable": true
+          },
+          "relations": {
+            "type": "string",
+            "nullable": true
+          },
+          "site": {
+            "type": "string",
+            "example": "S"
+          },
+          "start_year": {
+            "type": "integer",
+            "nullable": true
+          },
+          "submitted": {
+            "type": "string",
+            "nullable": true
+          },
+          "temp_commission": {
+            "type": "string",
+            "example": "",
+            "nullable": true
+          },
+          "terms_number": {
+            "type": "integer",
+            "nullable": true
+          },
+          "total_years": {
+            "type": "number",
+            "nullable": true
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "vote_link": {
+            "type": "string",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          }
+        },
+        "required": [
+          "id",
+          "person",
+          "fullname"
+        ],
+        "description": "A Federation Council senator profile. Built from one probed record: only id, person and fullname are marked required."
+      },
+      "Section": {
+        "type": "object",
+        "properties": {
+          "incomes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Income"
+            }
+          },
+          "main": {
+            "$ref": "#/components/schemas/SectionMain"
+          },
+          "position_en": {
+            "type": "string",
+            "nullable": true,
+            "example": ""
+          },
+          "position_ru": {
+            "type": "string"
+          },
+          "real_estates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RealEstate"
+            }
+          },
+          "savings": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in the probe; item shape unverified."
+          },
+          "spendings": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in the probe; item shape unverified."
+          },
+          "stocks": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in the probe; item shape unverified."
+          },
+          "vehicles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Vehicle"
+            }
+          }
+        },
+        "required": [
+          "incomes",
+          "main",
+          "position_en",
+          "position_ru",
+          "real_estates",
+          "savings",
+          "spendings",
+          "stocks",
+          "vehicles"
+        ],
+        "description": "One annual asset declaration (income, real estate, vehicles) as published under Russian anti-corruption law. Entries with a relative belong to the official's spouse or children."
+      },
+      "Income": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string",
+            "example": ""
+          },
+          "relative": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NamedRef"
+              }
+            ],
+            "nullable": true
+          },
+          "size": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "comment",
+          "relative",
+          "size"
+        ]
+      },
+      "RealEstate": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string",
+            "example": ""
+          },
+          "country": {
+            "type": "string",
+            "example": "Россия"
+          },
+          "name": {
+            "type": "string",
+            "example": "Для размещения гаражей и автостоянок"
+          },
+          "own_type": {
+            "$ref": "#/components/schemas/NamedRef"
+          },
+          "region": {
+            "type": "object",
+            "nullable": true,
+            "description": "Null in the probe; shape unverified."
+          },
+          "relative": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NamedRef"
+              }
+            ],
+            "nullable": true
+          },
+          "share": {
+            "type": "number",
+            "nullable": true
+          },
+          "square": {
+            "type": "number"
+          },
+          "type": {
+            "$ref": "#/components/schemas/NamedRef"
+          }
+        },
+        "required": [
+          "comment",
+          "country",
+          "name",
+          "own_type",
+          "region",
+          "relative",
+          "share",
+          "square",
+          "type"
+        ]
+      },
+      "Vehicle": {
+        "type": "object",
+        "properties": {
+          "brand": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NamedRef"
+              }
+            ],
+            "nullable": true
+          },
+          "brand_parent": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NamedRef"
+              }
+            ],
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "example": ""
+          },
+          "full_info": {
+            "type": "string",
+            "example": "Автомобиль легковой, Mitsubishi Pajero МИЦУБИСИ PAJERO"
+          },
+          "manufacture_year": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Null in the probe; type unverified."
+          },
+          "name": {
+            "type": "string",
+            "example": "МИЦУБИСИ PAJERO"
+          },
+          "relative": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NamedRef"
+              }
+            ],
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/NamedRef"
+          }
+        },
+        "required": [
+          "brand",
+          "comment",
+          "full_info",
+          "manufacture_year",
+          "name",
+          "relative",
+          "type"
+        ]
+      },
+      "SectionMain": {
+        "type": "object",
+        "properties": {
+          "document_type": {
+            "$ref": "#/components/schemas/NamedRef"
+          },
+          "office": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string",
+                "example": "Совет Федерации"
+              },
+              "region": {
+                "type": "object",
+                "nullable": true,
+                "description": "Null in the probe; shape unverified."
+              },
+              "type": {
+                "$ref": "#/components/schemas/NamedRef"
+              },
+              "url": {
+                "type": "string",
+                "example": "http://council.gov.ru"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "region",
+              "type",
+              "url"
+            ]
+          },
+          "party": {
+            "type": "object",
+            "nullable": true,
+            "description": "Null in the probe; shape unverified."
+          },
+          "person": {
+            "type": "object",
+            "properties": {
+              "family_name": {
+                "type": "string",
+                "example": "Ракитин"
+              },
+              "gender": {
+                "type": "string",
+                "example": "M"
+              },
+              "given_name": {
+                "type": "string",
+                "example": "Александр"
+              },
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string",
+                "example": "Ракитин Александр Васильевич"
+              },
+              "patronymic_name": {
+                "type": "string",
+                "example": "Васильевич"
+              },
+              "wikipedia_id": {
+                "type": "string",
+                "example": "Q41295310"
+              }
+            },
+            "required": [
+              "family_name",
+              "gender",
+              "given_name",
+              "id",
+              "name",
+              "patronymic_name",
+              "wikipedia_id"
+            ]
+          },
+          "year": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "document_type",
+          "office",
+          "party",
+          "person",
+          "year"
+        ]
+      },
+      "NamedRef": {
+        "type": "object",
+        "description": "An id/name pair from a Declarator dictionary.",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "ConvocationStat": {
+        "type": "object",
+        "properties": {
+          "rate": {
+            "type": "number",
+            "nullable": true,
+            "description": "Percentage of proposed bills that passed; null when none were proposed."
+          },
+          "number": {
+            "type": "integer"
+          },
+          "filtered_number": {
+            "type": "integer"
+          },
+          "approved_number": {
+            "type": "integer"
+          },
+          "lobbyist_number": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "rate",
+          "number",
+          "filtered_number",
+          "approved_number",
+          "lobbyist_number"
+        ]
+      },
+      "SuccessRate": {
+        "type": "object",
+        "properties": {
+          "success_rate": {
+            "type": "object",
+            "description": "Statistics per convocation, keyed convocation_<n> (e.g. convocation_7, convocation_8); only convocations the person sat in appear.",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConvocationStat"
+            }
+          }
+        },
+        "required": [
+          "success_rate"
+        ]
+      },
+      "LawDraft": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "экология"
+            }
+          },
+          "entry_date": {
+            "type": "string",
+            "example": "2022-07-11",
+            "nullable": true
+          },
+          "created_when": {
+            "type": "string",
+            "example": "2022-09-19T23:55:16.984079",
+            "nullable": true
+          },
+          "modified_when": {
+            "type": "string",
+            "example": "2024-07-22T19:38:36.801032",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string",
+            "example": "161119-8"
+          },
+          "link": {
+            "type": "string",
+            "example": "https://sozd.duma.gov.ru/bill/161119-8"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          },
+          "transcript_url": {
+            "type": "string",
+            "nullable": true,
+            "example": "http://api.duma.gov.ru/api/transcript/332229-8"
+          },
+          "old_phase": {
+            "type": "string",
+            "nullable": true,
+            "description": "Null in every probe; type unverified."
+          },
+          "type": {
+            "type": "string",
+            "example": "Федеральный закон",
+            "nullable": true
+          },
+          "in_watch_list": {
+            "type": "boolean"
+          },
+          "core": {
+            "type": "string",
+            "nullable": true
+          },
+          "possible_interested_persons": {
+            "type": "string",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "analyst_filled": {
+            "type": "boolean"
+          },
+          "lawyer_checked": {
+            "type": "boolean"
+          },
+          "fact_checked": {
+            "type": "boolean"
+          },
+          "approved": {
+            "type": "boolean"
+          },
+          "is_lobbyist": {
+            "type": "boolean"
+          },
+          "last_update": {
+            "type": "string",
+            "example": "2023-05-05T09:52:31.761676",
+            "nullable": true
+          },
+          "created_by": {
+            "type": "integer"
+          },
+          "modified_by": {
+            "type": "integer"
+          },
+          "law_authors": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Declarator person ids of the authors."
+          },
+          "initiators": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in every probe; item type unverified (probably integer ids)."
+          },
+          "initiator_offices": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in every probe; item type unverified (probably integer ids)."
+          },
+          "parties": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in every probe; item type unverified (probably integer ids)."
+          },
+          "committees": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Committee ids."
+          },
+          "departments": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in every probe; item type unverified (probably integer ids)."
+          },
+          "markers": {
+            "type": "array",
+            "items": {},
+            "description": "Empty in every probe; item type unverified (probably integer ids)."
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "number",
+          "link"
+        ],
+        "description": "A State Duma bill with Declarator analysis. Built from two probed records: only id, name, number and link are marked required."
+      },
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "detail"
+        ]
+      }
+    }
+  }
+}

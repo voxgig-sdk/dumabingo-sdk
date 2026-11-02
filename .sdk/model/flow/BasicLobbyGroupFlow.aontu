@@ -1,0 +1,22 @@
+# BasicLobbyGroupFlow
+
+main: kit: flow: BasicLobbyGroupFlow:
+{
+  entity: "lobby_group",
+  kind: "basic",
+  name: "BasicLobbyGroupFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "lobby_group_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLobbyGroupFlow"
+}

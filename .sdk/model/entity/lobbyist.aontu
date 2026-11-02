@@ -1,0 +1,286 @@
+# Entity: lobbyist
+
+main: kit: entity: lobbyist: {
+
+  alias: field: {}
+
+  fields: {
+    birth_date: {
+      h: "Birth Date"
+      n: "birth_date"
+      r: true
+      t: "`$STRING`"
+    }
+    commission: {
+      h: "Commission"
+      n: "commission"
+      r: true
+      t: "`$STRING`"
+    }
+    committee: {
+      h: "Committee"
+      n: "committee"
+      r: true
+      t: "`$STRING`"
+    }
+    committees: {
+      h: "Committees"
+      n: "committees"
+      r: true
+      t: "`$ARRAY`"
+    }
+    convocation: {
+      h: "Convocation"
+      n: "convocation"
+      r: false
+      t: "`$INTEGER`"
+    }
+    convocations: {
+      h: "Convocations"
+      n: "convocations"
+      r: true
+      t: "`$ARRAY`"
+    }
+    draft: {
+      h: "Draft"
+      n: "draft"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    election_method: {
+      h: "Election Method"
+      n: "election_method"
+      r: true
+      t: "`$STRING`"
+    }
+    end_date: {
+      h: "End Date"
+      n: "end_date"
+      r: true
+      sh: "Free text in the sf dump (e.g."
+      t: "`$STRING`"
+    }
+    fraction: {
+      h: "Fraction"
+      n: "fraction"
+      r: false
+      sh: "Faction: an integer faction id in the Duma dumps (d7, d8), the faction NAME as a string in the Federation Council dump (sf); null when unknown."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    fraction_end_date: {
+      h: "Fraction End Date"
+      n: "fraction_end_date"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction_group: {
+      h: "Fraction Group"
+      n: "fraction_group"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction_old: {
+      h: "Fraction Old"
+      n: "fraction_old"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction_start_date: {
+      h: "Fraction Start Date"
+      n: "fraction_start_date"
+      r: false
+      t: "`$STRING`"
+    }
+    fullname: {
+      h: "Fullname"
+      n: "fullname"
+      r: true
+      t: "`$STRING`"
+    }
+    gender: {
+      h: "Gender"
+      n: "gender"
+      r: true
+      t: "`$STRING`"
+    }
+    goverment_body: {
+      h: "Goverment Body"
+      n: "goverment_body"
+      r: true
+      t: "`$STRING`"
+    }
+    groups: {
+      h: "Groups"
+      n: "groups"
+      r: true
+      sh: "Lobby group ids (listLobbyGroups)."
+      t: "`$ARRAY`"
+    }
+    hidden: {
+      h: "Hidden"
+      n: "hidden"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Lobbyist record id: the {id} of getDeputyProfile (Duma) or getSenatorProfile (Federation Council)."
+      t: "`$INTEGER`"
+    }
+    last_appointment: {
+      h: "Last Appointment"
+      n: "last_appointment"
+      r: true
+      t: "`$STRING`"
+    }
+    law_draft_apis: {
+      h: "Law Draft Apis"
+      n: "law_draft_apis"
+      r: false
+      t: "`$ARRAY`"
+    }
+    law_draft_count: {
+      h: "Law Draft Count"
+      n: "law_draft_count"
+      r: false
+      t: "`$INTEGER`"
+    }
+    lobbist: {
+      h: "Lobbist"
+      n: "lobbist"
+      r: false
+      t: "`$INTEGER`"
+    }
+    modified_when: {
+      h: "Modified When"
+      n: "modified_when"
+      r: false
+      t: "`$STRING`"
+    }
+    person: {
+      h: "Person"
+      n: "person"
+      r: true
+      sh: "Declarator person id: use with searchSections and getSuccessRate."
+      t: "`$INTEGER`"
+    }
+    positions: {
+      h: "Positions"
+      n: "positions"
+      r: false
+      t: "`$ARRAY`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: true
+      t: "`$ANY`"
+    }
+    rupep: {
+      h: "Rupep"
+      n: "rupep"
+      r: false
+      t: "`$STRING`"
+    }
+    site: {
+      h: "Site"
+      n: "site"
+      r: true
+      sh: "Chamber: 'D' (State Duma) or 'S' (Federation Council)."
+      t: "`$STRING`"
+    }
+    start_year: {
+      h: "Start Year"
+      n: "start_year"
+      r: true
+      t: "`$INTEGER`"
+    }
+    temp_commission: {
+      h: "Temp Commission"
+      n: "temp_commission"
+      r: true
+      t: "`$STRING`"
+    }
+    terms_number: {
+      h: "Terms Number"
+      n: "terms_number"
+      r: true
+      t: "`$INTEGER`"
+    }
+    total_years: {
+      h: "Total Years"
+      n: "total_years"
+      r: true
+      t: "`$NUMBER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "lobbyist"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /media/dumps/lobbist-small-{chamber}.json"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "sf"
+                k: "param"
+                n: "chamber"
+                or: "chamber"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/media/dumps/lobbist-small-{chamber}.json"
+          q: {
+            exist: [
+              "chamber"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "media"
+            }
+            {
+              lit: "dumps"
+            }
+            {
+              lit: "lobbist-small-{chamber}.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

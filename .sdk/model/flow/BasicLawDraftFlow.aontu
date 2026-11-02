@@ -1,0 +1,32 @@
+# BasicLawDraftFlow
+
+main: kit: flow: BasicLawDraftFlow:
+{
+  entity: "law_draft",
+  kind: "basic",
+  name: "BasicLawDraftFlow",
+  step: [
+    {
+      i: {
+        ref: "law_draft_ref01",
+        srcdatavar: "law_draft_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "law_draft01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-law_draft_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLawDraftFlow"
+}

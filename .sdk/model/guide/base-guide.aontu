@@ -1,0 +1,61 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 7
+  metrics: count: path: 8
+  metrics: count: method: 8
+
+  entity: deputy_profile: {
+    path: "/api/lobbist_detail/{id}/": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: law_draft: {
+    path: "/api/law_draft_api/{id}/": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: lobby_group: {
+    path: "/api/lobby_group/": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: lobbyist: {
+    path: "/media/dumps/lobbist-small-{chamber}.json": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: person: {
+    path: "/api/convocations/{convocationId}/person_convocations": {
+      rename: param: "convocationId": *"convocation_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.persons`")|top
+    }
+    path: "/api/v1/search/sections/": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: senator_profile: {
+    path: "/api/lobbist/{id}/": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: success_rate: {
+    path: "/api/persons/{personId}/success_rate": {
+      rename: param: "personId": *"person_id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.success_rate`")|top
+    }
+  }
+
+}

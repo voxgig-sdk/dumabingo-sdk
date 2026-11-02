@@ -1,0 +1,9 @@
+# Flows
+
+@"./BasicDeputyProfileFlow.aontu"
+@"./BasicLawDraftFlow.aontu"
+@"./BasicLobbyGroupFlow.aontu"
+@"./BasicLobbyistFlow.aontu"
+@"./BasicPersonFlow.aontu"
+@"./BasicSenatorProfileFlow.aontu"
+@"./BasicSuccessRateFlow.aontu"

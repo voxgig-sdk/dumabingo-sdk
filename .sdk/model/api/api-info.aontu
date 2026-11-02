@@ -1,0 +1,26 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        name: "l0v3m0n3y/dumabingo"
+        url: "https://github.com/l0v3m0n3y/dumabingo"
+      }
+      description: "Unofficial: the Declarator (api.deklarator.org) endpoints behind dumabingo.org, an interactive map of the lobbying ties of Russian State Duma deputies and Federation Council senators: deputies, lobby groups, bills, bill success rates and officials' asset declarations. Not documented. Endpoint list from the Swift client https://github.com/l0v3m0n3y/dumabingo (src/dumabingo.swift), plus GET /api/lobbist/{id}/ (senator profiles) and the d7/d8/sf dump names, both taken from the dumabingo.org front-end bundle. Every schema was taken from live GET probes on 2026-10-23 (no key). The client's two other calls live on another host (https://dumabingo.org/assets/data/rating.json and alias.json, both static JSON) and are not modelled. Text is Russian; bio/conclusion/relations/submitted are HTML. NOTE: searchSections returns officials' published anti-corruption asset declarations, including the income, property and vehicles of spouses and children. Unverified: fields that were null or empty in every probe (marked in their descriptions), pagination parameters of searchSections, and whether format=json is required (it was always sent)."
+      servers: [
+        {
+          description: "Declarator API"
+          url: "https://api.deklarator.org"
+        }
+      ]
+      summary: "Unofficial: the Declarator (api.deklarator.org) endpoints behind dumabingo.org, an interactive map of the lobbying ties of Russian State Duma deputies and Federation Council senators: deputies, lobby groups, bills, bill success rates and…"
+      title: "DumaBingo API (Declarator)"
+      version: "1.0.0"
+      website: "https://deklarator.org"
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+# BasicSuccessRateFlow
+
+main: kit: flow: BasicSuccessRateFlow:
+{
+  entity: "success_rate",
+  kind: "basic",
+  name: "BasicSuccessRateFlow",
+  step: [
+    {
+      i: {
+        ref: "success_rate_ref01",
+        srcdatavar: "success_rate_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "success_rate01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-success_rate_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSuccessRateFlow"
+}

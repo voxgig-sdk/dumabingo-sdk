@@ -1,0 +1,32 @@
+# BasicDeputyProfileFlow
+
+main: kit: flow: BasicDeputyProfileFlow:
+{
+  entity: "deputy_profile",
+  kind: "basic",
+  name: "BasicDeputyProfileFlow",
+  step: [
+    {
+      i: {
+        ref: "deputy_profile_ref01",
+        srcdatavar: "deputy_profile_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "deputy_profile01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-deputy_profile_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDeputyProfileFlow"
+}

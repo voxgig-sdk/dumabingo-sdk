@@ -1,0 +1,9 @@
+# Entity Models
+
+@"./deputy_profile.aontu"
+@"./law_draft.aontu"
+@"./lobby_group.aontu"
+@"./lobbyist.aontu"
+@"./person.aontu"
+@"./senator_profile.aontu"
+@"./success_rate.aontu"

@@ -1,0 +1,291 @@
+# Entity: senator_profile
+
+main: kit: entity: senator_profile: {
+
+  alias: field: {}
+
+  fields: {
+    bio: {
+      h: "Bio"
+      n: "bio"
+      r: false
+      t: "`$STRING`"
+    }
+    birth_date: {
+      h: "Birth Date"
+      n: "birth_date"
+      r: false
+      t: "`$STRING`"
+    }
+    comments: {
+      h: "Comments"
+      n: "comments"
+      r: false
+      t: "`$STRING`"
+    }
+    commission: {
+      h: "Commission"
+      n: "commission"
+      r: false
+      t: "`$STRING`"
+    }
+    committee: {
+      h: "Committee"
+      n: "committee"
+      r: false
+      t: "`$STRING`"
+    }
+    committees: {
+      h: "Committees"
+      n: "committees"
+      r: false
+      sh: "Empty in the probe; item type unverified."
+      t: "`$ARRAY`"
+    }
+    conclusion: {
+      h: "Conclusion"
+      n: "conclusion"
+      r: false
+      t: "`$STRING`"
+    }
+    convocations: {
+      h: "Convocations"
+      n: "convocations"
+      r: false
+      t: "`$ARRAY`"
+    }
+    duma_id: {
+      h: "Duma Id"
+      n: "duma_id"
+      r: false
+      sh: "State Duma id; null for senators in the probe (an integer in Duma profiles)."
+      t: "`$INTEGER`"
+    }
+    edited: {
+      h: "Edited"
+      n: "edited"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    election_method: {
+      h: "Election Method"
+      n: "election_method"
+      r: false
+      t: "`$STRING`"
+    }
+    end_date: {
+      h: "End Date"
+      n: "end_date"
+      r: false
+      t: "`$STRING`"
+    }
+    family: {
+      h: "Family"
+      n: "family"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction: {
+      h: "Fraction"
+      n: "fraction"
+      r: false
+      sh: "Faction name."
+      t: "`$STRING`"
+    }
+    fraction_group: {
+      h: "Fraction Group"
+      n: "fraction_group"
+      r: false
+      t: "`$STRING`"
+    }
+    fullname: {
+      h: "Fullname"
+      n: "fullname"
+      r: true
+      t: "`$STRING`"
+    }
+    gender: {
+      h: "Gender"
+      n: "gender"
+      r: false
+      t: "`$STRING`"
+    }
+    goverment_body: {
+      h: "Goverment Body"
+      n: "goverment_body"
+      r: false
+      t: "`$STRING`"
+    }
+    groups: {
+      h: "Groups"
+      n: "groups"
+      r: false
+      t: "`$ARRAY`"
+    }
+    hidden: {
+      h: "Hidden"
+      n: "hidden"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    last_appointment: {
+      h: "Last Appointment"
+      n: "last_appointment"
+      r: false
+      t: "`$STRING`"
+    }
+    last_import: {
+      h: "Last Import"
+      n: "last_import"
+      r: false
+      t: "`$STRING`"
+    }
+    person: {
+      h: "Person"
+      n: "person"
+      r: true
+      t: "`$INTEGER`"
+    }
+    photo: {
+      h: "Photo"
+      n: "photo"
+      r: false
+      t: "`$STRING`"
+    }
+    position: {
+      h: "Position"
+      n: "position"
+      r: false
+      t: "`$STRING`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: false
+      t: "`$ANY`"
+    }
+    relations: {
+      h: "Relations"
+      n: "relations"
+      r: false
+      t: "`$STRING`"
+    }
+    site: {
+      h: "Site"
+      n: "site"
+      r: false
+      t: "`$STRING`"
+    }
+    start_year: {
+      h: "Start Year"
+      n: "start_year"
+      r: false
+      t: "`$INTEGER`"
+    }
+    submitted: {
+      h: "Submitted"
+      n: "submitted"
+      r: false
+      t: "`$STRING`"
+    }
+    temp_commission: {
+      h: "Temp Commission"
+      n: "temp_commission"
+      r: false
+      t: "`$STRING`"
+    }
+    terms_number: {
+      h: "Terms Number"
+      n: "terms_number"
+      r: false
+      t: "`$INTEGER`"
+    }
+    total_years: {
+      h: "Total Years"
+      n: "total_years"
+      r: false
+      t: "`$NUMBER`"
+    }
+    verified: {
+      h: "Verified"
+      n: "verified"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    vote_link: {
+      h: "Vote Link"
+      n: "vote_link"
+      r: false
+      sh: "Null in every probe; type unverified."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "senator_profile"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/lobbist/{id}/"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: 10514
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/lobbist/{id}/"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "lobbist"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

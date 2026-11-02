@@ -1,0 +1,51 @@
+{
+  "existing": {
+    "success_rate": {
+      "SUCCESS_RATE00": {
+        "approved_number": 50,
+        "filtered_number": 51,
+        "lobbyist_number": 52,
+        "number": 53,
+        "rate": 54,
+        "person_id": "PERSON01",
+        "id": "SUCCESS_RATE00"
+      },
+      "SUCCESS_RATE01": {
+        "approved_number": 100,
+        "filtered_number": 101,
+        "lobbyist_number": 102,
+        "number": 103,
+        "rate": 104,
+        "person_id": "PERSON01",
+        "id": "SUCCESS_RATE01"
+      },
+      "SUCCESS_RATE02": {
+        "approved_number": 150,
+        "filtered_number": 151,
+        "lobbyist_number": 152,
+        "number": 153,
+        "rate": 154,
+        "person_id": "PERSON01",
+        "id": "SUCCESS_RATE02"
+      }
+    }
+  },
+  "new": {
+    "success_rate": {
+      "success_rate_ref01": {
+        "approved_number": 200,
+        "filtered_number": 201,
+        "lobbyist_number": 202,
+        "number": 203,
+        "rate": 204
+      }
+    }
+  },
+  "requests": {
+    "GET /api/persons/{personId}/success_rate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

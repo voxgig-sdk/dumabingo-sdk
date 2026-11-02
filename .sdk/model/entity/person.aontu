@@ -1,0 +1,201 @@
+# Entity: person
+
+main: kit: entity: person: {
+
+  alias: field: {}
+
+  fields: {
+    convocations: {
+      h: "Convocations"
+      n: "convocations"
+      r: true
+      t: "`$ARRAY`"
+    }
+    incomes: {
+      h: "Incomes"
+      n: "incomes"
+      r: true
+      t: "`$ARRAY`"
+    }
+    main: {
+      h: "Main"
+      n: "main"
+      r: true
+      t: "`$OBJECT`"
+    }
+    person_id: {
+      h: "Person Id"
+      n: "person_id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    position_en: {
+      h: "Position En"
+      n: "position_en"
+      r: true
+      t: "`$STRING`"
+    }
+    position_ru: {
+      h: "Position Ru"
+      n: "position_ru"
+      r: true
+      t: "`$STRING`"
+    }
+    real_estates: {
+      h: "Real Estates"
+      n: "real_estates"
+      r: true
+      t: "`$ARRAY`"
+    }
+    savings: {
+      h: "Savings"
+      n: "savings"
+      r: true
+      sh: "Empty in the probe; item shape unverified."
+      t: "`$ARRAY`"
+    }
+    spendings: {
+      h: "Spendings"
+      n: "spendings"
+      r: true
+      sh: "Empty in the probe; item shape unverified."
+      t: "`$ARRAY`"
+    }
+    stocks: {
+      h: "Stocks"
+      n: "stocks"
+      r: true
+      sh: "Empty in the probe; item shape unverified."
+      t: "`$ARRAY`"
+    }
+    vehicles: {
+      h: "Vehicles"
+      n: "vehicles"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "person"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/convocations/{convocationId}/person_convocations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: 8
+                k: "param"
+                n: "convocation_id"
+                or: "convocationId"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/convocations/{convocationId}/person_convocations"
+          q: {
+            exist: [
+              "convocation_id"
+            ]
+          }
+          r: {
+            param: {
+              convocationId: "convocation_id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "convocations"
+            }
+            {
+              var: "convocation_id"
+            }
+            {
+              lit: "person_convocations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.persons`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/search/sections/"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 57270
+                k: "query"
+                n: "person"
+                or: "person"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/search/sections/"
+          q: {
+            exist: [
+              "person"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "search"
+            }
+            {
+              lit: "sections"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.results`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

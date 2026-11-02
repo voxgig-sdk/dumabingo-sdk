@@ -1,0 +1,3259 @@
+{
+  "def": "dumabingo_0.1.0.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "deputy_profile": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "appointing_date": {
+              "a": true,
+              "h": "Appointing Date",
+              "n": "appointing_date",
+              "r": false,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$STRING`"
+            },
+            "bio": {
+              "a": true,
+              "h": "Bio",
+              "n": "bio",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "birth_date": {
+              "a": true,
+              "h": "Birth Date",
+              "n": "birth_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "comments": {
+              "a": true,
+              "h": "Comments",
+              "n": "comments",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "commission": {
+              "a": true,
+              "h": "Commission",
+              "n": "commission",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "committee": {
+              "a": true,
+              "h": "Committee",
+              "n": "committee",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "committees": {
+              "a": true,
+              "h": "Committees",
+              "n": "committees",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "conclusion": {
+              "a": true,
+              "h": "Conclusion",
+              "n": "conclusion",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "convocation": {
+              "a": true,
+              "h": "Convocation",
+              "n": "convocation",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "draft": {
+              "a": true,
+              "h": "Draft",
+              "n": "draft",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "duma_id": {
+              "a": true,
+              "h": "Duma Id",
+              "n": "duma_id",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "edited": {
+              "a": true,
+              "h": "Edited",
+              "n": "edited",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "election_method": {
+              "a": true,
+              "h": "Election Method",
+              "n": "election_method",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "end_date": {
+              "a": true,
+              "h": "End Date",
+              "n": "end_date",
+              "r": false,
+              "sh": "Free text in the sf dump (e.g.",
+              "t": "`$STRING`"
+            },
+            "end_date_old": {
+              "a": true,
+              "h": "End Date Old",
+              "n": "end_date_old",
+              "r": false,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$STRING`"
+            },
+            "fact_checked": {
+              "a": true,
+              "h": "Fact Checked",
+              "n": "fact_checked",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "family": {
+              "a": true,
+              "h": "Family",
+              "n": "family",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction": {
+              "a": true,
+              "h": "Fraction",
+              "n": "fraction",
+              "r": false,
+              "sh": "Faction id.",
+              "t": "`$INTEGER`"
+            },
+            "fraction_end_date": {
+              "a": true,
+              "h": "Fraction End Date",
+              "n": "fraction_end_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction_group": {
+              "a": true,
+              "h": "Fraction Group",
+              "n": "fraction_group",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction_old": {
+              "a": true,
+              "h": "Fraction Old",
+              "n": "fraction_old",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction_start_date": {
+              "a": true,
+              "h": "Fraction Start Date",
+              "n": "fraction_start_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fullname": {
+              "a": true,
+              "h": "Fullname",
+              "n": "fullname",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "gender": {
+              "a": true,
+              "h": "Gender",
+              "n": "gender",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "goverment_body": {
+              "a": true,
+              "h": "Goverment Body",
+              "n": "goverment_body",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "groups": {
+              "a": true,
+              "h": "Groups",
+              "n": "groups",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "hidden": {
+              "a": true,
+              "h": "Hidden",
+              "n": "hidden",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "last_appointment": {
+              "a": true,
+              "h": "Last Appointment",
+              "n": "last_appointment",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "last_import": {
+              "a": true,
+              "h": "Last Import",
+              "n": "last_import",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "law_draft_count": {
+              "a": true,
+              "h": "Law Draft Count",
+              "n": "law_draft_count",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "lawyer_checked": {
+              "a": true,
+              "h": "Lawyer Checked",
+              "n": "lawyer_checked",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "lobbist": {
+              "a": true,
+              "h": "Lobbist",
+              "n": "lobbist",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "modified_when": {
+              "a": true,
+              "h": "Modified When",
+              "n": "modified_when",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "office": {
+              "a": true,
+              "h": "Office",
+              "n": "office",
+              "r": false,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$STRING`"
+            },
+            "person": {
+              "a": true,
+              "h": "Person",
+              "n": "person",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "photo": {
+              "a": true,
+              "h": "Photo",
+              "n": "photo",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "positions": {
+              "a": true,
+              "h": "Positions",
+              "n": "positions",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "raw_position": {
+              "a": true,
+              "h": "Raw Position",
+              "n": "raw_position",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "region": {
+              "a": true,
+              "h": "Region",
+              "n": "region",
+              "r": false,
+              "t": "`$ANY`"
+            },
+            "relations": {
+              "a": true,
+              "h": "Relations",
+              "n": "relations",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "site": {
+              "a": true,
+              "h": "Site",
+              "n": "site",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "start_year": {
+              "a": true,
+              "h": "Start Year",
+              "n": "start_year",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "submitted": {
+              "a": true,
+              "h": "Submitted",
+              "n": "submitted",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "temp_commission": {
+              "a": true,
+              "h": "Temp Commission",
+              "n": "temp_commission",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "terms_number": {
+              "a": true,
+              "h": "Terms Number",
+              "n": "terms_number",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "total_years": {
+              "a": true,
+              "h": "Total Years",
+              "n": "total_years",
+              "r": false,
+              "t": "`$NUMBER`"
+            },
+            "vote_link": {
+              "a": true,
+              "h": "Vote Link",
+              "n": "vote_link",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "deputy_profile",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/lobbist_detail/{id}/",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": 4489,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/lobbist_detail/{id}/",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "lobbist_detail"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "law_draft": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "analyst_filled": {
+              "a": true,
+              "h": "Analyst Filled",
+              "n": "analyst_filled",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "approved": {
+              "a": true,
+              "h": "Approved",
+              "n": "approved",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "committees": {
+              "a": true,
+              "h": "Committees",
+              "n": "committees",
+              "r": false,
+              "sh": "Committee ids.",
+              "t": "`$ARRAY`"
+            },
+            "core": {
+              "a": true,
+              "h": "Core",
+              "n": "core",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "created_by": {
+              "a": true,
+              "h": "Created By",
+              "n": "created_by",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "created_when": {
+              "a": true,
+              "h": "Created When",
+              "n": "created_when",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "departments": {
+              "a": true,
+              "h": "Departments",
+              "n": "departments",
+              "r": false,
+              "sh": "Empty in every probe; item type unverified (probably integer ids).",
+              "t": "`$ARRAY`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$STRING`"
+            },
+            "entry_date": {
+              "a": true,
+              "h": "Entry Date",
+              "n": "entry_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fact_checked": {
+              "a": true,
+              "h": "Fact Checked",
+              "n": "fact_checked",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "in_watch_list": {
+              "a": true,
+              "h": "In Watch List",
+              "n": "in_watch_list",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "initiator_offices": {
+              "a": true,
+              "h": "Initiator Offices",
+              "n": "initiator_offices",
+              "r": false,
+              "sh": "Empty in every probe; item type unverified (probably integer ids).",
+              "t": "`$ARRAY`"
+            },
+            "initiators": {
+              "a": true,
+              "h": "Initiators",
+              "n": "initiators",
+              "r": false,
+              "sh": "Empty in every probe; item type unverified (probably integer ids).",
+              "t": "`$ARRAY`"
+            },
+            "is_lobbyist": {
+              "a": true,
+              "h": "Is Lobbyist",
+              "n": "is_lobbyist",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "keywords": {
+              "a": true,
+              "h": "Keywords",
+              "n": "keywords",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "last_update": {
+              "a": true,
+              "h": "Last Update",
+              "n": "last_update",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "law_authors": {
+              "a": true,
+              "h": "Law Authors",
+              "n": "law_authors",
+              "r": false,
+              "sh": "Declarator person ids of the authors.",
+              "t": "`$ARRAY`"
+            },
+            "lawyer_checked": {
+              "a": true,
+              "h": "Lawyer Checked",
+              "n": "lawyer_checked",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "link": {
+              "a": true,
+              "h": "Link",
+              "n": "link",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "markers": {
+              "a": true,
+              "h": "Markers",
+              "n": "markers",
+              "r": false,
+              "sh": "Empty in every probe; item type unverified (probably integer ids).",
+              "t": "`$ARRAY`"
+            },
+            "modified_by": {
+              "a": true,
+              "h": "Modified By",
+              "n": "modified_by",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "modified_when": {
+              "a": true,
+              "h": "Modified When",
+              "n": "modified_when",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "note": {
+              "a": true,
+              "h": "Note",
+              "n": "note",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "number": {
+              "a": true,
+              "h": "Number",
+              "n": "number",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "old_phase": {
+              "a": true,
+              "h": "Old Phase",
+              "n": "old_phase",
+              "r": false,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$STRING`"
+            },
+            "parties": {
+              "a": true,
+              "h": "Parties",
+              "n": "parties",
+              "r": false,
+              "sh": "Empty in every probe; item type unverified (probably integer ids).",
+              "t": "`$ARRAY`"
+            },
+            "possible_interested_persons": {
+              "a": true,
+              "h": "Possible Interested Persons",
+              "n": "possible_interested_persons",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "transcript_url": {
+              "a": true,
+              "h": "Transcript Url",
+              "n": "transcript_url",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "law_draft",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/law_draft_api/{id}/",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": 391,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/law_draft_api/{id}/",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "law_draft_api"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "lobby_group": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "level": {
+              "a": true,
+              "h": "Level",
+              "n": "level",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "lft": {
+              "a": true,
+              "h": "Lft",
+              "n": "lft",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "office": {
+              "a": true,
+              "h": "Office",
+              "n": "office",
+              "r": true,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$INTEGER`"
+            },
+            "order": {
+              "a": true,
+              "h": "Order",
+              "n": "order",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "parent": {
+              "a": true,
+              "h": "Parent",
+              "n": "parent",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "region": {
+              "a": true,
+              "h": "Region",
+              "n": "region",
+              "r": true,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$INTEGER`"
+            },
+            "rght": {
+              "a": true,
+              "h": "Rght",
+              "n": "rght",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "tree_id": {
+              "a": true,
+              "h": "Tree Id",
+              "n": "tree_id",
+              "r": true,
+              "t": "`$INTEGER`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "lobby_group",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/lobby_group/",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/lobby_group/",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "lobby_group"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "lobbyist": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "birth_date": {
+              "a": true,
+              "h": "Birth Date",
+              "n": "birth_date",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "commission": {
+              "a": true,
+              "h": "Commission",
+              "n": "commission",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "committee": {
+              "a": true,
+              "h": "Committee",
+              "n": "committee",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "committees": {
+              "a": true,
+              "h": "Committees",
+              "n": "committees",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "convocation": {
+              "a": true,
+              "h": "Convocation",
+              "n": "convocation",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "convocations": {
+              "a": true,
+              "h": "Convocations",
+              "n": "convocations",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "draft": {
+              "a": true,
+              "h": "Draft",
+              "n": "draft",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "election_method": {
+              "a": true,
+              "h": "Election Method",
+              "n": "election_method",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "end_date": {
+              "a": true,
+              "h": "End Date",
+              "n": "end_date",
+              "r": true,
+              "sh": "Free text in the sf dump (e.g.",
+              "t": "`$STRING`"
+            },
+            "fraction": {
+              "a": true,
+              "h": "Fraction",
+              "n": "fraction",
+              "r": false,
+              "sh": "Faction: an integer faction id in the Duma dumps (d7, d8), the faction NAME as a string in the Federation Council dump (sf); null when unknown.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "fraction_end_date": {
+              "a": true,
+              "h": "Fraction End Date",
+              "n": "fraction_end_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction_group": {
+              "a": true,
+              "h": "Fraction Group",
+              "n": "fraction_group",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction_old": {
+              "a": true,
+              "h": "Fraction Old",
+              "n": "fraction_old",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction_start_date": {
+              "a": true,
+              "h": "Fraction Start Date",
+              "n": "fraction_start_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fullname": {
+              "a": true,
+              "h": "Fullname",
+              "n": "fullname",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "gender": {
+              "a": true,
+              "h": "Gender",
+              "n": "gender",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "goverment_body": {
+              "a": true,
+              "h": "Goverment Body",
+              "n": "goverment_body",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "groups": {
+              "a": true,
+              "h": "Groups",
+              "n": "groups",
+              "r": true,
+              "sh": "Lobby group ids (listLobbyGroups).",
+              "t": "`$ARRAY`"
+            },
+            "hidden": {
+              "a": true,
+              "h": "Hidden",
+              "n": "hidden",
+              "r": true,
+              "t": "`$BOOLEAN`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Lobbyist record id: the {id} of getDeputyProfile (Duma) or getSenatorProfile (Federation Council).",
+              "t": "`$INTEGER`"
+            },
+            "last_appointment": {
+              "a": true,
+              "h": "Last Appointment",
+              "n": "last_appointment",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "law_draft_apis": {
+              "a": true,
+              "h": "Law Draft Apis",
+              "n": "law_draft_apis",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "law_draft_count": {
+              "a": true,
+              "h": "Law Draft Count",
+              "n": "law_draft_count",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "lobbist": {
+              "a": true,
+              "h": "Lobbist",
+              "n": "lobbist",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "modified_when": {
+              "a": true,
+              "h": "Modified When",
+              "n": "modified_when",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "person": {
+              "a": true,
+              "h": "Person",
+              "n": "person",
+              "r": true,
+              "sh": "Declarator person id: use with searchSections and getSuccessRate.",
+              "t": "`$INTEGER`"
+            },
+            "positions": {
+              "a": true,
+              "h": "Positions",
+              "n": "positions",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "region": {
+              "a": true,
+              "h": "Region",
+              "n": "region",
+              "r": true,
+              "t": "`$ANY`"
+            },
+            "rupep": {
+              "a": true,
+              "h": "Rupep",
+              "n": "rupep",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "site": {
+              "a": true,
+              "h": "Site",
+              "n": "site",
+              "r": true,
+              "sh": "Chamber: 'D' (State Duma) or 'S' (Federation Council).",
+              "t": "`$STRING`"
+            },
+            "start_year": {
+              "a": true,
+              "h": "Start Year",
+              "n": "start_year",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "temp_commission": {
+              "a": true,
+              "h": "Temp Commission",
+              "n": "temp_commission",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "terms_number": {
+              "a": true,
+              "h": "Terms Number",
+              "n": "terms_number",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "total_years": {
+              "a": true,
+              "h": "Total Years",
+              "n": "total_years",
+              "r": true,
+              "t": "`$NUMBER`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "lobbyist",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /media/dumps/lobbist-small-{chamber}.json",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "sf",
+                        "k": "param",
+                        "n": "chamber",
+                        "or": "chamber",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/media/dumps/lobbist-small-{chamber}.json",
+                  "q": {
+                    "exist": [
+                      "chamber"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "media"
+                    },
+                    {
+                      "lit": "dumps"
+                    },
+                    {
+                      "lit": "lobbist-small-{chamber}.json"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "person": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "convocations": {
+              "a": true,
+              "h": "Convocations",
+              "n": "convocations",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "incomes": {
+              "a": true,
+              "h": "Incomes",
+              "n": "incomes",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "main": {
+              "a": true,
+              "h": "Main",
+              "n": "main",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "person_id": {
+              "a": true,
+              "h": "Person Id",
+              "n": "person_id",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "position_en": {
+              "a": true,
+              "h": "Position En",
+              "n": "position_en",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "position_ru": {
+              "a": true,
+              "h": "Position Ru",
+              "n": "position_ru",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "real_estates": {
+              "a": true,
+              "h": "Real Estates",
+              "n": "real_estates",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "savings": {
+              "a": true,
+              "h": "Savings",
+              "n": "savings",
+              "r": true,
+              "sh": "Empty in the probe; item shape unverified.",
+              "t": "`$ARRAY`"
+            },
+            "spendings": {
+              "a": true,
+              "h": "Spendings",
+              "n": "spendings",
+              "r": true,
+              "sh": "Empty in the probe; item shape unverified.",
+              "t": "`$ARRAY`"
+            },
+            "stocks": {
+              "a": true,
+              "h": "Stocks",
+              "n": "stocks",
+              "r": true,
+              "sh": "Empty in the probe; item shape unverified.",
+              "t": "`$ARRAY`"
+            },
+            "vehicles": {
+              "a": true,
+              "h": "Vehicles",
+              "n": "vehicles",
+              "r": true,
+              "t": "`$ARRAY`"
+            }
+          },
+          "name": "person",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/convocations/{convocationId}/person_convocations",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": 8,
+                        "k": "param",
+                        "n": "convocation_id",
+                        "or": "convocationId",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/convocations/{convocationId}/person_convocations",
+                  "q": {
+                    "exist": [
+                      "convocation_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "convocationId": "convocation_id"
+                    }
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "convocations"
+                    },
+                    {
+                      "var": "convocation_id"
+                    },
+                    {
+                      "lit": "person_convocations"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.persons`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/search/sections/",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 57270,
+                        "k": "query",
+                        "n": "person",
+                        "or": "person",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/search/sections/",
+                  "q": {
+                    "exist": [
+                      "person"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "search"
+                    },
+                    {
+                      "lit": "sections"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "senator_profile": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "bio": {
+              "a": true,
+              "h": "Bio",
+              "n": "bio",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "birth_date": {
+              "a": true,
+              "h": "Birth Date",
+              "n": "birth_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "comments": {
+              "a": true,
+              "h": "Comments",
+              "n": "comments",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "commission": {
+              "a": true,
+              "h": "Commission",
+              "n": "commission",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "committee": {
+              "a": true,
+              "h": "Committee",
+              "n": "committee",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "committees": {
+              "a": true,
+              "h": "Committees",
+              "n": "committees",
+              "r": false,
+              "sh": "Empty in the probe; item type unverified.",
+              "t": "`$ARRAY`"
+            },
+            "conclusion": {
+              "a": true,
+              "h": "Conclusion",
+              "n": "conclusion",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "convocations": {
+              "a": true,
+              "h": "Convocations",
+              "n": "convocations",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "duma_id": {
+              "a": true,
+              "h": "Duma Id",
+              "n": "duma_id",
+              "r": false,
+              "sh": "State Duma id; null for senators in the probe (an integer in Duma profiles).",
+              "t": "`$INTEGER`"
+            },
+            "edited": {
+              "a": true,
+              "h": "Edited",
+              "n": "edited",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "election_method": {
+              "a": true,
+              "h": "Election Method",
+              "n": "election_method",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "end_date": {
+              "a": true,
+              "h": "End Date",
+              "n": "end_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "family": {
+              "a": true,
+              "h": "Family",
+              "n": "family",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fraction": {
+              "a": true,
+              "h": "Fraction",
+              "n": "fraction",
+              "r": false,
+              "sh": "Faction name.",
+              "t": "`$STRING`"
+            },
+            "fraction_group": {
+              "a": true,
+              "h": "Fraction Group",
+              "n": "fraction_group",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fullname": {
+              "a": true,
+              "h": "Fullname",
+              "n": "fullname",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "gender": {
+              "a": true,
+              "h": "Gender",
+              "n": "gender",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "goverment_body": {
+              "a": true,
+              "h": "Goverment Body",
+              "n": "goverment_body",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "groups": {
+              "a": true,
+              "h": "Groups",
+              "n": "groups",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "hidden": {
+              "a": true,
+              "h": "Hidden",
+              "n": "hidden",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "last_appointment": {
+              "a": true,
+              "h": "Last Appointment",
+              "n": "last_appointment",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "last_import": {
+              "a": true,
+              "h": "Last Import",
+              "n": "last_import",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "person": {
+              "a": true,
+              "h": "Person",
+              "n": "person",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "photo": {
+              "a": true,
+              "h": "Photo",
+              "n": "photo",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "position": {
+              "a": true,
+              "h": "Position",
+              "n": "position",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "region": {
+              "a": true,
+              "h": "Region",
+              "n": "region",
+              "r": false,
+              "t": "`$ANY`"
+            },
+            "relations": {
+              "a": true,
+              "h": "Relations",
+              "n": "relations",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "site": {
+              "a": true,
+              "h": "Site",
+              "n": "site",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "start_year": {
+              "a": true,
+              "h": "Start Year",
+              "n": "start_year",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "submitted": {
+              "a": true,
+              "h": "Submitted",
+              "n": "submitted",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "temp_commission": {
+              "a": true,
+              "h": "Temp Commission",
+              "n": "temp_commission",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "terms_number": {
+              "a": true,
+              "h": "Terms Number",
+              "n": "terms_number",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "total_years": {
+              "a": true,
+              "h": "Total Years",
+              "n": "total_years",
+              "r": false,
+              "t": "`$NUMBER`"
+            },
+            "verified": {
+              "a": true,
+              "h": "Verified",
+              "n": "verified",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "vote_link": {
+              "a": true,
+              "h": "Vote Link",
+              "n": "vote_link",
+              "r": false,
+              "sh": "Null in every probe; type unverified.",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "senator_profile",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/lobbist/{id}/",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": 10514,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/lobbist/{id}/",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "lobbist"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "success_rate": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "approved_number": {
+              "a": true,
+              "h": "Approved Number",
+              "n": "approved_number",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "filtered_number": {
+              "a": true,
+              "h": "Filtered Number",
+              "n": "filtered_number",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "lobbyist_number": {
+              "a": true,
+              "h": "Lobbyist Number",
+              "n": "lobbyist_number",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "number": {
+              "a": true,
+              "h": "Number",
+              "n": "number",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "rate": {
+              "a": true,
+              "h": "Rate",
+              "n": "rate",
+              "r": true,
+              "sh": "Percentage of proposed bills that passed; null when none were proposed.",
+              "t": "`$NUMBER`"
+            }
+          },
+          "name": "success_rate",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/persons/{personId}/success_rate",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": 31850,
+                        "k": "param",
+                        "n": "person_id",
+                        "or": "personId",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/persons/{personId}/success_rate",
+                  "q": {
+                    "exist": [
+                      "person_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "personId": "person_id"
+                    }
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "persons"
+                    },
+                    {
+                      "var": "person_id"
+                    },
+                    {
+                      "lit": "success_rate"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.success_rate`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.person"
+              ]
+            ]
+          }
+        }
+      },
+      "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "description": "Client-side rate limiting via a token bucket",
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Rate limiting",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "description": "Automatic retry of transient failures with exponential backoff",
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Retry",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "now": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "description": "Per-request timeout with transport abort",
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Timeout",
+          "transport": "wrap",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicDeputyProfileFlow": {
+          "active": true,
+          "entity": "deputy_profile",
+          "key$": "BasicDeputyProfileFlow",
+          "kind": "basic",
+          "name": "BasicDeputyProfileFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "deputy_profile_ref01",
+                "srcdatavar": "deputy_profile_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "deputy_profile01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-deputy_profile_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicLawDraftFlow": {
+          "active": true,
+          "entity": "law_draft",
+          "key$": "BasicLawDraftFlow",
+          "kind": "basic",
+          "name": "BasicLawDraftFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "law_draft_ref01",
+                "srcdatavar": "law_draft_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "law_draft01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-law_draft_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicLobbyGroupFlow": {
+          "active": true,
+          "entity": "lobby_group",
+          "key$": "BasicLobbyGroupFlow",
+          "kind": "basic",
+          "name": "BasicLobbyGroupFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "lobby_group_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicLobbyistFlow": {
+          "active": true,
+          "entity": "lobbyist",
+          "key$": "BasicLobbyistFlow",
+          "kind": "basic",
+          "name": "BasicLobbyistFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "chamber": "chamber01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "lobbyist_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicPersonFlow": {
+          "active": true,
+          "entity": "person",
+          "key$": "BasicPersonFlow",
+          "kind": "basic",
+          "name": "BasicPersonFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "person_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicSenatorProfileFlow": {
+          "active": true,
+          "entity": "senator_profile",
+          "key$": "BasicSenatorProfileFlow",
+          "kind": "basic",
+          "name": "BasicSenatorProfileFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "senator_profile_ref01",
+                "srcdatavar": "senator_profile_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "senator_profile01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-senator_profile_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicSuccessRateFlow": {
+          "active": true,
+          "entity": "success_rate",
+          "key$": "BasicSuccessRateFlow",
+          "kind": "basic",
+          "name": "BasicSuccessRateFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "success_rate_ref01",
+                "srcdatavar": "success_rate_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "success_rate01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-success_rate_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "info": {
+        "auth": false,
+        "contact": {
+          "name": "l0v3m0n3y/dumabingo",
+          "url": "https://github.com/l0v3m0n3y/dumabingo"
+        },
+        "description": "Unofficial: the Declarator (api.deklarator.org) endpoints behind dumabingo.org, an interactive map of the lobbying ties of Russian State Duma deputies and Federation Council senators: deputies, lobby groups, bills, bill success rates and officials' asset declarations. Not documented. Endpoint list from the Swift client https://github.com/l0v3m0n3y/dumabingo (src/dumabingo.swift), plus GET /api/lobbist/{id}/ (senator profiles) and the d7/d8/sf dump names, both taken from the dumabingo.org front-end bundle. Every schema was taken from live GET probes on 2026-10-23 (no key). The client's two other calls live on another host (https://dumabingo.org/assets/data/rating.json and alias.json, both static JSON) and are not modelled. Text is Russian; bio/conclusion/relations/submitted are HTML. NOTE: searchSections returns officials' published anti-corruption asset declarations, including the income, property and vehicles of spouses and children. Unverified: fields that were null or empty in every probe (marked in their descriptions), pagination parameters of searchSections, and whether format=json is required (it was always sent).",
+        "meta_source": "https://www.freepublicapis.com",
+        "servers": [
+          {
+            "description": "Declarator API",
+            "url": "https://api.deklarator.org"
+          }
+        ],
+        "summary": "Unofficial: the Declarator (api.deklarator.org) endpoints behind dumabingo.org, an interactive map of the lobbying ties of Russian State Duma deputies and Federation Council senators: deputies, lobby groups, bills, bill success rates and…",
+        "title": "DumaBingo API (Declarator)",
+        "version": "1.0.0",
+        "website": "https://deklarator.org"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,patch,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "publisher": {
+        "name": "",
+        "security": "",
+        "url": ""
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "go": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "go",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-cli",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go CLI"
+        },
+        "go-mcp": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-mcp",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go MCP server",
+          "tool": {
+            "write": false
+          }
+        },
+        "lua": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.5"
+            }
+          },
+          "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "lua",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "luarocks",
+              "package": "",
+              "state": "pending",
+              "url": "https://luarocks.org",
+              "vault": {
+                "alias": "luarocks",
+                "env": "LUAROCKS_API_KEY",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
+          "title": "Lua"
+        },
+        "php": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "php",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "packagist",
+              "package": "",
+              "state": "pending",
+              "url": "https://packagist.org",
+              "vault": {
+                "alias": "packagist",
+                "env": "PACKAGIST_API_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
+          "title": "PHP"
+        },
+        "py": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "requests": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.33"
+            }
+          },
+          "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "py",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "pypi",
+              "package": "",
+              "state": "pending",
+              "url": "https://pypi.org",
+              "vault": {
+                "alias": "pypi",
+                "env": "",
+                "recipe": "pypi"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "json": {
+              "active": true,
+              "kind": "prod",
+              "version": "*"
+            }
+          },
+          "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "rb",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "rubygems",
+              "package": "",
+              "state": "pending",
+              "url": "https://rubygems.org",
+              "vault": {
+                "alias": "gem",
+                "env": "",
+                "recipe": "gem"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "dumabingo",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      },
+      "text": {
+        "about_md": "",
+        "docs_url": "",
+        "entity_desc": {},
+        "homepage": "",
+        "meta_source": "",
+        "summary": "",
+        "tagline": "",
+        "title": "",
+        "website": ""
+      }
+    }
+  },
+  "name": "dumabingo",
+  "origin": "voxgig-sdk"
+}

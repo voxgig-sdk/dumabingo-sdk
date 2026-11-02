@@ -1,0 +1,364 @@
+# Entity: deputy_profile
+
+main: kit: entity: deputy_profile: {
+
+  alias: field: {}
+
+  fields: {
+    appointing_date: {
+      h: "Appointing Date"
+      n: "appointing_date"
+      r: false
+      sh: "Null in every probe; type unverified."
+      t: "`$STRING`"
+    }
+    bio: {
+      h: "Bio"
+      n: "bio"
+      r: false
+      t: "`$STRING`"
+    }
+    birth_date: {
+      h: "Birth Date"
+      n: "birth_date"
+      r: false
+      t: "`$STRING`"
+    }
+    comments: {
+      h: "Comments"
+      n: "comments"
+      r: false
+      t: "`$STRING`"
+    }
+    commission: {
+      h: "Commission"
+      n: "commission"
+      r: false
+      t: "`$STRING`"
+    }
+    committee: {
+      h: "Committee"
+      n: "committee"
+      r: false
+      t: "`$STRING`"
+    }
+    committees: {
+      h: "Committees"
+      n: "committees"
+      r: false
+      t: "`$ARRAY`"
+    }
+    conclusion: {
+      h: "Conclusion"
+      n: "conclusion"
+      r: false
+      t: "`$STRING`"
+    }
+    convocation: {
+      h: "Convocation"
+      n: "convocation"
+      r: false
+      t: "`$INTEGER`"
+    }
+    draft: {
+      h: "Draft"
+      n: "draft"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    duma_id: {
+      h: "Duma Id"
+      n: "duma_id"
+      r: false
+      t: "`$INTEGER`"
+    }
+    edited: {
+      h: "Edited"
+      n: "edited"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    election_method: {
+      h: "Election Method"
+      n: "election_method"
+      r: false
+      t: "`$STRING`"
+    }
+    end_date: {
+      h: "End Date"
+      n: "end_date"
+      r: false
+      sh: "Free text in the sf dump (e.g."
+      t: "`$STRING`"
+    }
+    end_date_old: {
+      h: "End Date Old"
+      n: "end_date_old"
+      r: false
+      sh: "Null in every probe; type unverified."
+      t: "`$STRING`"
+    }
+    fact_checked: {
+      h: "Fact Checked"
+      n: "fact_checked"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    family: {
+      h: "Family"
+      n: "family"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction: {
+      h: "Fraction"
+      n: "fraction"
+      r: false
+      sh: "Faction id."
+      t: "`$INTEGER`"
+    }
+    fraction_end_date: {
+      h: "Fraction End Date"
+      n: "fraction_end_date"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction_group: {
+      h: "Fraction Group"
+      n: "fraction_group"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction_old: {
+      h: "Fraction Old"
+      n: "fraction_old"
+      r: false
+      t: "`$STRING`"
+    }
+    fraction_start_date: {
+      h: "Fraction Start Date"
+      n: "fraction_start_date"
+      r: false
+      t: "`$STRING`"
+    }
+    fullname: {
+      h: "Fullname"
+      n: "fullname"
+      r: true
+      t: "`$STRING`"
+    }
+    gender: {
+      h: "Gender"
+      n: "gender"
+      r: false
+      t: "`$STRING`"
+    }
+    goverment_body: {
+      h: "Goverment Body"
+      n: "goverment_body"
+      r: false
+      t: "`$STRING`"
+    }
+    groups: {
+      h: "Groups"
+      n: "groups"
+      r: false
+      t: "`$ARRAY`"
+    }
+    hidden: {
+      h: "Hidden"
+      n: "hidden"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    last_appointment: {
+      h: "Last Appointment"
+      n: "last_appointment"
+      r: false
+      t: "`$STRING`"
+    }
+    last_import: {
+      h: "Last Import"
+      n: "last_import"
+      r: false
+      t: "`$STRING`"
+    }
+    law_draft_count: {
+      h: "Law Draft Count"
+      n: "law_draft_count"
+      r: false
+      t: "`$INTEGER`"
+    }
+    lawyer_checked: {
+      h: "Lawyer Checked"
+      n: "lawyer_checked"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    lobbist: {
+      h: "Lobbist"
+      n: "lobbist"
+      r: false
+      t: "`$INTEGER`"
+    }
+    modified_when: {
+      h: "Modified When"
+      n: "modified_when"
+      r: false
+      t: "`$STRING`"
+    }
+    office: {
+      h: "Office"
+      n: "office"
+      r: false
+      sh: "Null in every probe; type unverified."
+      t: "`$STRING`"
+    }
+    person: {
+      h: "Person"
+      n: "person"
+      r: true
+      t: "`$INTEGER`"
+    }
+    photo: {
+      h: "Photo"
+      n: "photo"
+      r: false
+      t: "`$STRING`"
+    }
+    positions: {
+      h: "Positions"
+      n: "positions"
+      r: false
+      t: "`$ARRAY`"
+    }
+    raw_position: {
+      h: "Raw Position"
+      n: "raw_position"
+      r: false
+      t: "`$STRING`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: false
+      t: "`$ANY`"
+    }
+    relations: {
+      h: "Relations"
+      n: "relations"
+      r: false
+      t: "`$STRING`"
+    }
+    site: {
+      h: "Site"
+      n: "site"
+      r: false
+      t: "`$STRING`"
+    }
+    start_year: {
+      h: "Start Year"
+      n: "start_year"
+      r: false
+      t: "`$INTEGER`"
+    }
+    submitted: {
+      h: "Submitted"
+      n: "submitted"
+      r: false
+      t: "`$STRING`"
+    }
+    temp_commission: {
+      h: "Temp Commission"
+      n: "temp_commission"
+      r: false
+      t: "`$STRING`"
+    }
+    terms_number: {
+      h: "Terms Number"
+      n: "terms_number"
+      r: false
+      t: "`$INTEGER`"
+    }
+    total_years: {
+      h: "Total Years"
+      n: "total_years"
+      r: false
+      t: "`$NUMBER`"
+    }
+    vote_link: {
+      h: "Vote Link"
+      n: "vote_link"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "deputy_profile"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/lobbist_detail/{id}/"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: 4489
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/lobbist_detail/{id}/"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "lobbist_detail"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

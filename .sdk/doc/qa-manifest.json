@@ -1,0 +1,28 @@
+{
+  "files": [
+    "SUMMARY.md"
+  ],
+  "config": ".sdk/doc/qa/vale.ini",
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Committee ids.",
+      "Declarator API",
+      "Declarator person id: use with searchSections and getSuccessRate.",
+      "Empty in every probe; item type unverified (probably integer ids).",
+      "Empty in the probe; item shape unverified.",
+      "Empty in the probe; item type unverified.",
+      "Faction id.",
+      "Faction name.",
+      "Faction: an integer faction id in the Duma dumps (d7, d8), the faction NAME as a string in the Federation Council dump (sf); null when unknown.",
+      "Free text in the sf dump (for example &#39;сентябрь 2022&#39;), YYYY-MM-DD in the Duma dumps.",
+      "Lobby group ids (listLobbyGroups).",
+      "Lobbyist record id: the &#123;id&#125; of getDeputyProfile (Duma) or getSenatorProfile (Federation Council).",
+      "Null in every probe; type unverified.",
+      "Percentage of proposed bills that passed; null when none were proposed.",
+      "State Duma id; null for senators in the probe (an integer in Duma profiles).",
+      "Successful response",
+      "Unofficial: the Declarator (`api.deklarator.org`) endpoints behind dumabingo.org, an interactive map of the lobbying ties of Russian State Duma deputies and Federation Council senators: deputies, lobby groups, bills, bill success rates and officials&#39; asset declarations. Not documented. Endpoint list from the Swift client https://github.com/l0v3m0n3y/dumabingo (src/dumabingo.swift), plus GET /api/lobbist/&#123;id&#125;/ (senator profiles) and the d7/d8/sf dump names, both taken from the dumabingo.org front-end bundle. Every schema was taken from live GET probes on 2026-10-23 (no key). The client&#39;s two other calls live on another host (https://dumabingo.org/assets/data/rating.json and alias.json, both static JSON) and are not modelled. Text is Russian; bio/conclusion/relations/submitted are HTML. NOTE: searchSections returns officials&#39; published anti-corruption asset declarations, including the income, property and vehicles of spouses and children. Unverified: fields that were null or empty in every probe (marked in their descriptions), pagination parameters of searchSections, and whether format=json is required (it was always sent)."
+    ]
+  }
+}

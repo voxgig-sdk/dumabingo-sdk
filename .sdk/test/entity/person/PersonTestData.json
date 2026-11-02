@@ -1,0 +1,77 @@
+{
+  "existing": {
+    "person": {
+      "PERSON00": {
+        "convocations": [],
+        "incomes": [],
+        "main": {},
+        "person_id": "PERSON01",
+        "position_en": "s72",
+        "position_ru": "s73",
+        "real_estates": [],
+        "savings": [],
+        "spendings": [],
+        "stocks": [],
+        "vehicles": [],
+        "convocation_id": "CONVOCATION01"
+      },
+      "PERSON01": {
+        "convocations": [],
+        "incomes": [],
+        "main": {},
+        "person_id": "PERSON01",
+        "position_en": "se0",
+        "position_ru": "se1",
+        "real_estates": [],
+        "savings": [],
+        "spendings": [],
+        "stocks": [],
+        "vehicles": [],
+        "convocation_id": "CONVOCATION01"
+      },
+      "PERSON02": {
+        "convocations": [],
+        "incomes": [],
+        "main": {},
+        "person_id": "PERSON01",
+        "position_en": "s14e",
+        "position_ru": "s14f",
+        "real_estates": [],
+        "savings": [],
+        "spendings": [],
+        "stocks": [],
+        "vehicles": [],
+        "convocation_id": "CONVOCATION01"
+      }
+    }
+  },
+  "new": {
+    "person": {
+      "person_ref01": {
+        "convocations": [],
+        "incomes": [],
+        "main": {},
+        "person_id": "PERSON01",
+        "position_en": "s1bc",
+        "position_ru": "s1bd",
+        "real_estates": [],
+        "savings": [],
+        "spendings": [],
+        "stocks": [],
+        "vehicles": []
+      }
+    }
+  },
+  "requests": {
+    "GET /api/convocations/{convocationId}/person_convocations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/search/sections/": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,232 @@
+-- Typed models for the Dumabingo SDK (LuaLS annotations).
+--
+-- GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+-- params (op.<name>.points[].g.params[]). Field/param types come from the
+-- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+-- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
+-- edit by hand.
+
+---@class DeputyProfile
+---@field appointing_date? string
+---@field bio? string
+---@field birth_date? string
+---@field comments? string
+---@field commission? string
+---@field committee? string
+---@field committees? table
+---@field conclusion? string
+---@field convocation? number
+---@field draft? boolean
+---@field duma_id? number
+---@field edited? boolean
+---@field election_method? string
+---@field end_date? string
+---@field end_date_old? string
+---@field fact_checked? boolean
+---@field family? string
+---@field fraction? number
+---@field fraction_end_date? string
+---@field fraction_group? string
+---@field fraction_old? string
+---@field fraction_start_date? string
+---@field fullname string
+---@field gender? string
+---@field goverment_body? string
+---@field groups? table
+---@field hidden? boolean
+---@field id number
+---@field last_appointment? string
+---@field last_import? string
+---@field law_draft_count? number
+---@field lawyer_checked? boolean
+---@field lobbist? number
+---@field modified_when? string
+---@field office? string
+---@field person number
+---@field photo? string
+---@field positions? table
+---@field raw_position? string
+---@field region? any
+---@field relations? string
+---@field site? string
+---@field start_year? number
+---@field submitted? string
+---@field temp_commission? string
+---@field terms_number? number
+---@field total_years? number
+---@field vote_link? string
+
+---@class DeputyProfileLoadMatch
+---@field id number
+
+---@class LawDraft
+---@field analyst_filled? boolean
+---@field approved? boolean
+---@field committees? table
+---@field core? string
+---@field created_by? number
+---@field created_when? string
+---@field departments? table
+---@field description? string
+---@field entry_date? string
+---@field fact_checked? boolean
+---@field id number
+---@field in_watch_list? boolean
+---@field initiator_offices? table
+---@field initiators? table
+---@field is_lobbyist? boolean
+---@field keywords? table
+---@field last_update? string
+---@field law_authors? table
+---@field lawyer_checked? boolean
+---@field link string
+---@field markers? table
+---@field modified_by? number
+---@field modified_when? string
+---@field name string
+---@field note? string
+---@field number string
+---@field old_phase? string
+---@field parties? table
+---@field possible_interested_persons? string
+---@field transcript_url? string
+---@field type? string
+
+---@class LawDraftLoadMatch
+---@field id number
+
+---@class LobbyGroup
+---@field id number
+---@field level number
+---@field lft number
+---@field name string
+---@field office number
+---@field order number
+---@field parent number
+---@field region number
+---@field rght number
+---@field tree_id number
+
+---@class LobbyGroupListMatch
+---@field id? number
+---@field level? number
+---@field lft? number
+---@field name? string
+---@field office? number
+---@field order? number
+---@field parent? number
+---@field region? number
+---@field rght? number
+---@field tree_id? number
+
+---@class Lobbyist
+---@field birth_date string
+---@field commission string
+---@field committee string
+---@field committees table
+---@field convocation? number
+---@field convocations table
+---@field draft? boolean
+---@field election_method string
+---@field end_date string
+---@field fraction? any
+---@field fraction_end_date? string
+---@field fraction_group? string
+---@field fraction_old? string
+---@field fraction_start_date? string
+---@field fullname string
+---@field gender string
+---@field goverment_body string
+---@field groups table
+---@field hidden boolean
+---@field id number
+---@field last_appointment string
+---@field law_draft_apis? table
+---@field law_draft_count? number
+---@field lobbist? number
+---@field modified_when? string
+---@field person number
+---@field positions? table
+---@field region any
+---@field rupep? string
+---@field site string
+---@field start_year number
+---@field temp_commission string
+---@field terms_number number
+---@field total_years number
+
+---@class LobbyistListMatch
+---@field chamber string
+
+---@class Person
+---@field convocations table
+---@field incomes table
+---@field main table
+---@field person_id number
+---@field position_en string
+---@field position_ru string
+---@field real_estates table
+---@field savings table
+---@field spendings table
+---@field stocks table
+---@field vehicles table
+
+---@class PersonListMatch
+---@field convocation_id number
+---@field format? string
+
+---@class SenatorProfile
+---@field bio? string
+---@field birth_date? string
+---@field comments? string
+---@field commission? string
+---@field committee? string
+---@field committees? table
+---@field conclusion? string
+---@field convocations? table
+---@field duma_id? number
+---@field edited? boolean
+---@field election_method? string
+---@field end_date? string
+---@field family? string
+---@field fraction? string
+---@field fraction_group? string
+---@field fullname string
+---@field gender? string
+---@field goverment_body? string
+---@field groups? table
+---@field hidden? boolean
+---@field id number
+---@field last_appointment? string
+---@field last_import? string
+---@field person number
+---@field photo? string
+---@field position? string
+---@field region? any
+---@field relations? string
+---@field site? string
+---@field start_year? number
+---@field submitted? string
+---@field temp_commission? string
+---@field terms_number? number
+---@field total_years? number
+---@field verified? boolean
+---@field vote_link? string
+
+---@class SenatorProfileLoadMatch
+---@field id number
+
+---@class SuccessRate
+---@field approved_number number
+---@field filtered_number number
+---@field lobbyist_number number
+---@field number number
+---@field rate number
+
+---@class SuccessRateLoadMatch
+---@field person_id number
+---@field format? string
+
+local M = {}
+
+return M

@@ -1,0 +1,72 @@
+<?php
+declare(strict_types=1);
+
+// Dumabingo SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+DumabingoUtility::setRegistrar(function (DumabingoUtility $u): void {
+    $u->clean = [DumabingoClean::class, 'call'];
+    $u->clean_add = [DumabingoClean::class, 'add'];
+    $u->clean_explain = [DumabingoDone::class, 'clean_explain'];
+    $u->done = [DumabingoDone::class, 'call'];
+    $u->make_error = [DumabingoMakeError::class, 'call'];
+    $u->feature_add = [DumabingoFeatureAdd::class, 'call'];
+    $u->feature_hook = [DumabingoFeatureHook::class, 'call'];
+    $u->feature_init = [DumabingoFeatureInit::class, 'call'];
+    $u->fetcher = [DumabingoFetcher::class, 'call'];
+    $u->make_fetch_def = [DumabingoMakeFetchDef::class, 'call'];
+    $u->make_context = [DumabingoMakeContext::class, 'call'];
+    $u->make_options = [DumabingoMakeOptions::class, 'call'];
+    $u->make_request = [DumabingoMakeRequest::class, 'call'];
+    $u->make_response = [DumabingoMakeResponse::class, 'call'];
+    $u->make_result = [DumabingoMakeResult::class, 'call'];
+    $u->make_point = [DumabingoMakePoint::class, 'call'];
+    $u->make_spec = [DumabingoMakeSpec::class, 'call'];
+    $u->make_url = [DumabingoMakeUrl::class, 'call'];
+    $u->param = [DumabingoParam::class, 'call'];
+    $u->prepare_auth = [DumabingoPrepareAuth::class, 'call'];
+    $u->prepare_body = [DumabingoPrepareBody::class, 'call'];
+    $u->prepare_headers = [DumabingoPrepareHeaders::class, 'call'];
+    $u->prepare_method = [DumabingoPrepareMethod::class, 'call'];
+    $u->prepare_params = [DumabingoPrepareParams::class, 'call'];
+    $u->prepare_path = [DumabingoPreparePath::class, 'call'];
+    $u->prepare_query = [DumabingoPrepareQuery::class, 'call'];
+    $u->graphql_body = [DumabingoGraphql::class, 'body'];
+    $u->graphql_errors = [DumabingoGraphql::class, 'errors'];
+    $u->result_basic = [DumabingoResultBasic::class, 'call'];
+    $u->result_body = [DumabingoResultBody::class, 'call'];
+    $u->result_headers = [DumabingoResultHeaders::class, 'call'];
+    $u->transform_request = [DumabingoTransformRequest::class, 'call'];
+    $u->transform_response = [DumabingoTransformResponse::class, 'call'];
+});

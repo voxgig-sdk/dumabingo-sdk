@@ -1,0 +1,266 @@
+# Entity: law_draft
+
+main: kit: entity: law_draft: {
+
+  alias: field: {}
+
+  fields: {
+    analyst_filled: {
+      h: "Analyst Filled"
+      n: "analyst_filled"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    approved: {
+      h: "Approved"
+      n: "approved"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    committees: {
+      h: "Committees"
+      n: "committees"
+      r: false
+      sh: "Committee ids."
+      t: "`$ARRAY`"
+    }
+    core: {
+      h: "Core"
+      n: "core"
+      r: false
+      t: "`$STRING`"
+    }
+    created_by: {
+      h: "Created By"
+      n: "created_by"
+      r: false
+      t: "`$INTEGER`"
+    }
+    created_when: {
+      h: "Created When"
+      n: "created_when"
+      r: false
+      t: "`$STRING`"
+    }
+    departments: {
+      h: "Departments"
+      n: "departments"
+      r: false
+      sh: "Empty in every probe; item type unverified (probably integer ids)."
+      t: "`$ARRAY`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Null in every probe; type unverified."
+      t: "`$STRING`"
+    }
+    entry_date: {
+      h: "Entry Date"
+      n: "entry_date"
+      r: false
+      t: "`$STRING`"
+    }
+    fact_checked: {
+      h: "Fact Checked"
+      n: "fact_checked"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    in_watch_list: {
+      h: "In Watch List"
+      n: "in_watch_list"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    initiator_offices: {
+      h: "Initiator Offices"
+      n: "initiator_offices"
+      r: false
+      sh: "Empty in every probe; item type unverified (probably integer ids)."
+      t: "`$ARRAY`"
+    }
+    initiators: {
+      h: "Initiators"
+      n: "initiators"
+      r: false
+      sh: "Empty in every probe; item type unverified (probably integer ids)."
+      t: "`$ARRAY`"
+    }
+    is_lobbyist: {
+      h: "Is Lobbyist"
+      n: "is_lobbyist"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    keywords: {
+      h: "Keywords"
+      n: "keywords"
+      r: false
+      t: "`$ARRAY`"
+    }
+    last_update: {
+      h: "Last Update"
+      n: "last_update"
+      r: false
+      t: "`$STRING`"
+    }
+    law_authors: {
+      h: "Law Authors"
+      n: "law_authors"
+      r: false
+      sh: "Declarator person ids of the authors."
+      t: "`$ARRAY`"
+    }
+    lawyer_checked: {
+      h: "Lawyer Checked"
+      n: "lawyer_checked"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    link: {
+      h: "Link"
+      n: "link"
+      r: true
+      t: "`$STRING`"
+    }
+    markers: {
+      h: "Markers"
+      n: "markers"
+      r: false
+      sh: "Empty in every probe; item type unverified (probably integer ids)."
+      t: "`$ARRAY`"
+    }
+    modified_by: {
+      h: "Modified By"
+      n: "modified_by"
+      r: false
+      t: "`$INTEGER`"
+    }
+    modified_when: {
+      h: "Modified When"
+      n: "modified_when"
+      r: false
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: false
+      t: "`$STRING`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: true
+      t: "`$STRING`"
+    }
+    old_phase: {
+      h: "Old Phase"
+      n: "old_phase"
+      r: false
+      sh: "Null in every probe; type unverified."
+      t: "`$STRING`"
+    }
+    parties: {
+      h: "Parties"
+      n: "parties"
+      r: false
+      sh: "Empty in every probe; item type unverified (probably integer ids)."
+      t: "`$ARRAY`"
+    }
+    possible_interested_persons: {
+      h: "Possible Interested Persons"
+      n: "possible_interested_persons"
+      r: false
+      t: "`$STRING`"
+    }
+    transcript_url: {
+      h: "Transcript Url"
+      n: "transcript_url"
+      r: false
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "law_draft"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/law_draft_api/{id}/"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: 391
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/law_draft_api/{id}/"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "law_draft_api"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

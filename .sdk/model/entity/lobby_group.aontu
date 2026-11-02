@@ -1,0 +1,113 @@
+# Entity: lobby_group
+
+main: kit: entity: lobby_group: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    level: {
+      h: "Level"
+      n: "level"
+      r: true
+      t: "`$INTEGER`"
+    }
+    lft: {
+      h: "Lft"
+      n: "lft"
+      r: true
+      t: "`$INTEGER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    office: {
+      h: "Office"
+      n: "office"
+      r: true
+      sh: "Null in every probe; type unverified."
+      t: "`$INTEGER`"
+    }
+    order: {
+      h: "Order"
+      n: "order"
+      r: true
+      t: "`$INTEGER`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: true
+      t: "`$INTEGER`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: true
+      sh: "Null in every probe; type unverified."
+      t: "`$INTEGER`"
+    }
+    rght: {
+      h: "Rght"
+      n: "rght"
+      r: true
+      t: "`$INTEGER`"
+    }
+    tree_id: {
+      h: "Tree Id"
+      n: "tree_id"
+      r: true
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "lobby_group"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/lobby_group/"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/api/lobby_group/"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "lobby_group"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

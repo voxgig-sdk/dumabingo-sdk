@@ -1,0 +1,32 @@
+# BasicSenatorProfileFlow
+
+main: kit: flow: BasicSenatorProfileFlow:
+{
+  entity: "senator_profile",
+  kind: "basic",
+  name: "BasicSenatorProfileFlow",
+  step: [
+    {
+      i: {
+        ref: "senator_profile_ref01",
+        srcdatavar: "senator_profile_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "senator_profile01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-senator_profile_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSenatorProfileFlow"
+}

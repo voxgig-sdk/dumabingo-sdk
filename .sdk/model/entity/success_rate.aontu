@@ -1,0 +1,118 @@
+# Entity: success_rate
+
+main: kit: entity: success_rate: {
+
+  alias: field: {}
+
+  fields: {
+    approved_number: {
+      h: "Approved Number"
+      n: "approved_number"
+      r: true
+      t: "`$INTEGER`"
+    }
+    filtered_number: {
+      h: "Filtered Number"
+      n: "filtered_number"
+      r: true
+      t: "`$INTEGER`"
+    }
+    lobbyist_number: {
+      h: "Lobbyist Number"
+      n: "lobbyist_number"
+      r: true
+      t: "`$INTEGER`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: true
+      t: "`$INTEGER`"
+    }
+    rate: {
+      h: "Rate"
+      n: "rate"
+      r: true
+      sh: "Percentage of proposed bills that passed; null when none were proposed."
+      t: "`$NUMBER`"
+    }
+  }
+
+  name: "success_rate"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/persons/{personId}/success_rate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: 31850
+                k: "param"
+                n: "person_id"
+                or: "personId"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/persons/{personId}/success_rate"
+          q: {
+            exist: [
+              "person_id"
+            ]
+          }
+          r: {
+            param: {
+              personId: "person_id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "persons"
+            }
+            {
+              var: "person_id"
+            }
+            {
+              lit: "success_rate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.success_rate`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.person")]
+  ]
+
+}
